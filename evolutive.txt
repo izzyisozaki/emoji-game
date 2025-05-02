@@ -9,5 +9,5 @@ Evolutive:
     2.1) una buona, che se premuta da punti
     2.2) una cattiva, che se premuta toglie punti
 
-
+> Per giocabilità cambiati i livelli di difficoltà
 

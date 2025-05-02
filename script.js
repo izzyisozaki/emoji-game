@@ -4,8 +4,8 @@ const timeLeft = document.querySelector('#time-left');
 const difficultySelect = document.querySelector('#difficulty-level');
 const startButton = document.querySelector('#start-button');
 const restartButton = document.getElementById('restart-button');
-const buonoSound = new Audio('/assets/homemadeoof.mp3');
-const cattivoSound = new Audio('/assets/pain-sound-in-mask.mp3');
+const buonoSound = new Audio('./assets/homemadeoof.mp3');
+const cattivoSound = new Audio('./assets/pain-sound-in-mask.mp3');
 
 // HomemadeOof by Thedavedude (Freesound)
 // Pain Sound in Mask by Hoggington (Freesound)
