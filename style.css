@@ -55,10 +55,106 @@ body {
     height: 200px;
     margin: 16px;
     background-color: rgb(60, 60, 60);
+    position: relative;  /* necessario per il posizionamento ::after */
+    transition: background-color 0.2s ease;
 }
 
-.emoji {
+.square:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+/* .emoji {
     background-image: url("https://w7.pngwing.com/pngs/407/764/png-transparent-yellow-smiley-emoji-emoji-computer-icons-emoticon-sunglasses-emoji-smiley-sticker-glasses.png");
     background-position: center;
     background-size: cover;
+} */
+
+/* visualizzazione emoji predefinita */
+.emoji-buono::before {
+    content: '😀';
+    font-size: 4em;
+    display: block;
+    text-align: center;
+    line-height: 200px;
+}
+
+.emoji-cattivo::before {
+    content: '😈';
+    font-size: 4em;
+    display: block;
+    text-align: center;
+    line-height: 200px;
+}
+
+/* reazioni emoji cliccate */
+.clicked-buono::after {
+    content: '😵';
+    font-size: 4em;
+    animation: pop 0.3s ease;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    line-height: 200px;
+}
+
+.clicked-cattivo::after {
+    content: '👿';
+    font-size: 4em;
+    animation: pop 0.3s ease;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    line-height: 200px;
+}
+
+/* pop animation */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.game-controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+#difficulty-level {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ccc;
+    color: #000;
+    font-size: 16px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+#start-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
 }
